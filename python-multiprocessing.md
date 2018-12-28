@@ -37,9 +37,12 @@ def process_row(row, a, b):
 	return (len(row) + a) / b
 
 def process_small_df(df, a, b):
+	results = []
 	for _, row in df.iterrows():
-		process_row(row, a, b)
+		result = process_row(row, a, b)
+		results.appen
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MzcwMDYzMTRdfQ==
+eyJoaXN0b3J5IjpbLTExMzM3MzU1MTksLTE5MzcwMDYzMTRdfQ
+==
 -->

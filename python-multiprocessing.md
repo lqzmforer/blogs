@@ -40,9 +40,12 @@ def process_small_df(df, a, b):
 	results = []
 	for _, row in df.iterrows():
 		result = process_row(row, a, b)
-		results.appen
+		results.append(result)
+	df['results'] = pd.Series({'results':results})
+	return df
+
+def process_
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMzM3MzU1MTksLTE5MzcwMDYzMTRdfQ
-==
+eyJoaXN0b3J5IjpbNTExODA2MjQ1LC0xOTM3MDA2MzE0XX0=
 -->

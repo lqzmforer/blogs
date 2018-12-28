@@ -3,7 +3,7 @@
 python multipreocessing库提供了方便的进程池管理，利用它可快速进行任务并行处理。几个重要的函数：
 * pool.map()/ pool.apply() 函数只能有一个参数
 * pool.startmap() 函数可带多个参数
-* pool.apply_async() 异步调用，xuya
+* pool.apply_async() 异步调用，需要用get（）方法取回结果
 
 ### CHUNKSIZE
 若需要处理的文件过大，可借助pandas分块读取文件进行处理的能力，减少内存占用。
@@ -99,6 +99,6 @@ def process_Pandas_data(func, df, num_processes=None):
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NjY2MTAyOTEsLTE5MzcwMDYzMTRdfQ
+eyJoaXN0b3J5IjpbLTE2OTg3NjQzMTUsLTE5MzcwMDYzMTRdfQ
 ==
 -->

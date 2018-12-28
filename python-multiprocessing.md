@@ -33,8 +33,9 @@ if __name__ == '__main__':
 ### 对已读入的big dataframe，进行拆分处理
 核心想法也是，将大的dataframe拆成多个，然后用多个proecss并行处理
 ```python
-
+def simple_fun(df, a, b):
+	return 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAyNjE1NDQxMV19
+eyJoaXN0b3J5IjpbLTU1ODEzNzA1NF19
 -->

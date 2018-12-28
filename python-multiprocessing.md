@@ -47,10 +47,10 @@ def process_small_df(df, a, b):
 def process_big_df_parallel(df, a, b, num_partitions=3):
 	df_split = np.array_split(df, num_partitions, axis=0)  
 	with Pool(num_partitions) as pool:  
-	    results_list pool.starmap(reorder_src_dest_run,zip(df_split, repeat(overlap), repeat(server_set)))  
+	    results_list = pool.starmap(reorder_src_dest_run,zip(df_split, repeat(overlap), repeat(server_set)))  
 return pd.concat(results_list, axis=0, ignore_index=True)
 ```
+* NOTE:  * 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4ODc4MTUyNzEsLTE5MzcwMDYzMTRdfQ
-==
+eyJoaXN0b3J5IjpbMTI1MDA0NDM1NCwtMTkzNzAwNjMxNF19
 -->

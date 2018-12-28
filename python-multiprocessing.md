@@ -50,7 +50,9 @@ def process_big_df_parallel(df, a, b, num_partitions=3):
 	    results_list = pool.starmap(reorder_src_dest_run,zip(df_split, repeat(overlap), repeat(server_set)))  
 return pd.concat(results_list, axis=0, ignore_index=True)
 ```
-* NOTE:  * 
+**NOTE:  **pool.startmap()可以映射带两个及以上的参数。
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI1MDA0NDM1NCwtMTkzNzAwNjMxNF19
+eyJoaXN0b3J5IjpbMjg3NzQ1MDc2LC0xOTM3MDA2MzE0XX0=
 -->

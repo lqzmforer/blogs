@@ -31,7 +31,7 @@ if __name__ == '__main__':
 ```
 
 ### 对已读入的big dataframe，进行拆分处理
-核心想法也是，将大的dataframe拆成多个，然后用多个proecss并行处理。这里假设只能按行循环处理，不能进行向量化的极端情况。
+核心想法也是，将大的dataframe拆成多个，然后用多个proecss并行处理。这里假设只能按行循环处理，不能进行向量化，并且处理函数带有多个参数的极端情况。
 ```python
 def process_row(row, a, b):
 	return (len(row) + a) / b
@@ -52,7 +52,10 @@ return pd.concat(results_list, axis=0, ignore_index=True)
 ```
 **NOTE:  **pool.startmap()可以映射带两个及以上的参数。
 
+若处理函数只包含一个参数，那么可以写一个wrapper函数：
+
+
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg4MTk3NDkzMCwtMTkzNzAwNjMxNF19
+eyJoaXN0b3J5IjpbLTE3NzU5MzE2LC0xOTM3MDA2MzE0XX0=
 -->

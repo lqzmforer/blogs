@@ -31,7 +31,7 @@ if __name__ == '__main__':
 ```
 
 ### 对已读入的big dataframe，进行拆分处理
-核心想法也是，将大的dataframe拆成多个，然后用多个proecss并行处理
+核心想法也是，将大的dataframe拆成多个，然后用多个proecss并行处理。这里假设只能按行循环处理，不能进行向量化的极端情况。
 ```python
 def process_row(row, a, b):
 	return (len(row) + a) / b
@@ -54,5 +54,5 @@ return pd.concat(results_list, axis=0, ignore_index=True)
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjg3NzQ1MDc2LC0xOTM3MDA2MzE0XX0=
+eyJoaXN0b3J5IjpbLTg4MTk3NDkzMCwtMTkzNzAwNjMxNF19
 -->

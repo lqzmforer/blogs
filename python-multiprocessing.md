@@ -54,8 +54,20 @@ return pd.concat(results_list, axis=0, ignore_index=True)
 
 若处理函数只包含一个参数，那么可以写一个wrapper函数：
 
+```python
+def parallelize_dataframe(df, func):  
+    """  
+ 将pandas dataframe进行拆分，用制定的函数func并行处理  :param df:  :param func:  :return:  
+ """  
+ df_split = np.array_split(df, num_partitions)  
+    pool = Pool(num_cores)  
+    df = pd.concat(pool.map(func, df_split))  
+    pool.close()  
+    pool.join()  
+    return df
+    ```
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NzU5MzE2LC0xOTM3MDA2MzE0XX0=
+eyJoaXN0b3J5IjpbMTAwNTM3MzQ4NywtMTkzNzAwNjMxNF19
 -->

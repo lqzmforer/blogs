@@ -33,11 +33,13 @@ if __name__ == '__main__':
 ### 对已读入的big dataframe，进行拆分处理
 核心想法也是，将大的dataframe拆成多个，然后用多个proecss并行处理
 ```python
-def (row, a, b):
+def process_row(row, a, b):
 	return (len(row) + a) / b
 
-def 
+def process_small_df(df, a, b):
+	for _, row in df.iterrows():
+		process_row(
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM3Nzk2MTI3MV19
+eyJoaXN0b3J5IjpbOTE4NTc5NTI4XX0=
 -->

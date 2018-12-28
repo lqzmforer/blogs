@@ -65,9 +65,34 @@ def parallelize_dataframe(df, func):
     pool.close()  
     pool.join()  
     return df
-    ```
+```
+
+### 对dataframe的多列用同一func进行并行处理
+```python
+from multiprocessing import Pool, cpu_count
+
+def process_Pandas_data(func, df, num_processes=None):
+    ''' Apply a function separately to each column in a dataframe, in parallel.'''
+    
+    # If num_processes is not specified, default to minimum(#columns, #machine-cores)
+    if num_processes==None:
+        num_processes = min(df.shape[1], cpu_count())
+    
+    # 'with' context manager takes care of pool.close() and pool.join() for us
+    with Pool(num_processes) as pool:
+        
+        # we need a sequence of columns to pass pool.map
+        seq = [df[col_name] for col_name in df.columns]
+        
+        # pool.map returns results as a list
+        results_list = pool.map(func, seq)
+        
+        # return list of processed columns, concatenated together as a new dataframe
+        return pd.concat(results_list, axis=1)
+```
+
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAwNTM3MzQ4NywtMTkzNzAwNjMxNF19
+eyJoaXN0b3J5IjpbLTU3MTYzMjIzNywtMTkzNzAwNjMxNF19
 -->

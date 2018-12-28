@@ -38,8 +38,8 @@ def process_row(row, a, b):
 
 def process_small_df(df, a, b):
 	for _, row in df.iterrows():
-		process_row(
+		process_row(row, a, b)
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTE4NTc5NTI4XX0=
+eyJoaXN0b3J5IjpbLTE5MzcwMDYzMTRdfQ==
 -->

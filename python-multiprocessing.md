@@ -1,4 +1,6 @@
 ## python mutli-processing
+### 写在前面
+python multipreocessing库提供了方便的进程池管理，利用它ke
 
 ### CHUNKSIZE
 若需要处理的文件过大，可借助pandas分块读取文件进行处理的能力，减少内存占用。
@@ -94,5 +96,5 @@ def process_Pandas_data(func, df, num_processes=None):
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU3MTYzMjIzNywtMTkzNzAwNjMxNF19
+eyJoaXN0b3J5IjpbODk4MjEwODYwLC0xOTM3MDA2MzE0XX0=
 -->
